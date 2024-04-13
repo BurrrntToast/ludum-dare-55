@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://28286us3jo6x"]
+[gd_scene load_steps=8 format=3 uid="uid://28286us3jo6x"]
 
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="1_4ph17"]
 [ext_resource type="PackedScene" uid="uid://cuq3w1clum66o" path="res://entities/player/player.tscn" id="1_a4s0e"]
 [ext_resource type="Script" path="res://scenes/dev stuff/dev_level.gd" id="1_ywec5"]
 [ext_resource type="Texture2D" uid="uid://bjmavdja4jcw4" path="res://resources/pico-8-extended.png" id="3_t4ns5"]
+[ext_resource type="PackedScene" uid="uid://cyd5t8xs3rsh6" path="res://entities/level flag/flag.tscn" id="5_irt18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n408k"]
 texture = ExtResource("1_4ph17")
@@ -36,3 +37,7 @@ position = Vector2(89, -13)
 texture = ExtResource("3_t4ns5")
 
 [node name="ShellHolder" type="Node2D" parent="."]
+
+[node name="Flag" parent="." instance=ExtResource("5_irt18")]
+position = Vector2(147, 133)
+target = "res://scenes/dev stuff/dev_level2.tscn"
