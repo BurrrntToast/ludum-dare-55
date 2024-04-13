@@ -4,7 +4,9 @@ const STATIC_PLAYER = preload("res://entities/static player/static_player.tscn")
 
 @onready var jump_sound = $JumpSound
 @onready var summon_sound = $SummonSound
+@onready var sprite = $Sprite
 
+@export var guy_id : float = 0
 @export var speed : float = 150.0
 
 @export var jump_height : float = 20.0
@@ -15,11 +17,15 @@ const STATIC_PLAYER = preload("res://entities/static player/static_player.tscn")
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (time_to_peak_time * time_to_peak_time)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (time_to_descent_time * time_to_descent_time)) * -1.0
 
+@onready var all_colours : Array = ["#ff004d", "#00e436", "#ffec27", "#29adff"]
+@onready var current_colour : String = "" 
+
 var is_active : bool = false
 
+func _ready():
+	pick_random_colour()
+
 func _process(delta):
-	
-	print(is_active)
 	
 	if is_on_floor() and !is_active:
 		is_active = true
@@ -28,6 +34,8 @@ func _process(delta):
 		var STATIC_PLAYER_INSTANCE = STATIC_PLAYER.instantiate()
 		STATIC_PLAYER_INSTANCE.global_position = global_position
 		GlobalScript.current_shell_holder.add_child(STATIC_PLAYER_INSTANCE)
+		STATIC_PLAYER_INSTANCE.setup(guy_id - 1, current_colour)
+		pick_random_colour()
 		global_position.y = -20
 		is_active = false
 		summon_sound.play()
@@ -59,3 +67,7 @@ func jump():
 func get_gravity():
 	if velocity.y < 0.0: return jump_gravity
 	else: return fall_gravity
+	
+func pick_random_colour():
+	current_colour = all_colours.pick_random()
+	sprite.self_modulate = current_colour

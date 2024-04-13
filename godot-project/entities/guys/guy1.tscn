@@ -13,13 +13,12 @@ size = Vector2(12, 8)
 
 [node name="Guy1" type="CharacterBody2D"]
 script = ExtResource("1_v3wnx")
-speed = 100.0
+guy_id = 1.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_i5idd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_c1mkl")
 
