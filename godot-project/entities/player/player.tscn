@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuq3w1clum66o"]
+[gd_scene load_steps=6 format=3 uid="uid://cuq3w1clum66o"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_v3wnx"]
+[ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/Sounds/jump.wav" id="2_738ji"]
+[ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/Sounds/explosion.wav" id="3_bps3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
 size = Vector2(8, 16)
@@ -30,3 +32,11 @@ shape = SubResource("RectangleShape2D_c1mkl")
 visible = false
 position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_as08v")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_738ji")
+volume_db = -18.366
+
+[node name="SummonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bps3n")
+volume_db = -18.366

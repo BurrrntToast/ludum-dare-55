@@ -19,6 +19,7 @@ func _process(delta):
 		STATIC_PLAYER_INSTANCE.global_position = global_position
 		GlobalScript.current_shell_holder.add_child(STATIC_PLAYER_INSTANCE)
 		global_position.y = -20
+		$SummonSound.play()
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
@@ -28,7 +29,9 @@ func _physics_process(delta):
 func handle_movement():
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		
 		jump()
+		
 
 	var direction = Input.get_axis("left", "right")
 	if direction:
@@ -38,6 +41,7 @@ func handle_movement():
 	
 func jump():
 	velocity.y = jump_velocity
+	$JumpSound.play()
 	
 func get_gravity():
 	if velocity.y < 0.0: return jump_gravity
