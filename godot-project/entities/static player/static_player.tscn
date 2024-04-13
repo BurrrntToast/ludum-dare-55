@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb2oop5syt6a1"]
+
+[ext_resource type="Script" path="res://entities/static player/static_player.gd" id="1_ruxg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
+size = Vector2(8, 16)
+
+[node name="StaticPlayer" type="StaticBody2D"]
+script = ExtResource("1_ruxg3")
+
+[node name="TempSprite" type="ColorRect" parent="."]
+offset_right = 8.0
+offset_bottom = 16.0
+color = Color(0.996078, 1, 0, 1)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_c1mkl")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_as08v")
