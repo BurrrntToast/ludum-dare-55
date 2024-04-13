@@ -12,7 +12,26 @@ config_version=5
 
 config/name="ludum dare 55"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://resources/textures/icon.svg"
+
+[autoload]
+
+GlobalScript="*res://scripts/global script/global_script.tscn"
+
+[display]
+
+window/size/viewport_width=192
+window/size/viewport_height=104
+
+[file_customization]
+
+folder_colors={
+"res://entities/": "green",
+"res://exports/": "red",
+"res://resources/": "purple",
+"res://scenes/": "blue",
+"res://scripts/": "yellow"
+}
 
 [rendering]
 
