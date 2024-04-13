@@ -14,13 +14,15 @@ const STATIC_GUY = preload("res://entities/static player/static_player.tscn")
 var current_guy = null
 
 func _ready():
-	GlobalScript.current_level = self
-	GlobalScript.current_shell_holder = $ShellHolder
+
+	guy_spawn_pos.visible = false
 
 	var default_guy = GUY_2.instantiate()
 	default_guy.global_position = guy_spawn_pos.global_position
 	player_holder.add_child(default_guy)
 	current_guy = default_guy
+	
+	TransitionManager.transition_in()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("summon"):
