@@ -29,17 +29,6 @@ func _process(delta):
 	
 	if is_on_floor() and !is_active:
 		is_active = true
-	
-	if Input.is_action_just_pressed("summon"):
-		var STATIC_PLAYER_INSTANCE = STATIC_PLAYER.instantiate()
-		STATIC_PLAYER_INSTANCE.global_position = global_position
-		GlobalScript.current_shell_holder.add_child(STATIC_PLAYER_INSTANCE)
-		STATIC_PLAYER_INSTANCE.setup(guy_id - 1, current_colour)
-		pick_random_colour()
-		global_position.y = -20
-		velocity = Vector2(0, 0)
-		is_active = false
-		summon_sound.play()
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
@@ -54,7 +43,6 @@ func handle_movement_input():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 		
-
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
@@ -72,3 +60,14 @@ func get_gravity():
 func pick_random_colour():
 	current_colour = all_colours.pick_random()
 	sprite.self_modulate = current_colour
+
+#func freeze():
+	#var STATIC_PLAYER_INSTANCE = STATIC_PLAYER.instantiate()
+	#STATIC_PLAYER_INSTANCE.global_position = global_position
+	#GlobalScript.current_shell_holder.add_child(STATIC_PLAYER_INSTANCE)
+	#STATIC_PLAYER_INSTANCE.setup(guy_id - 1, current_colour)
+	#pick_random_colour()
+	#global_position.y = -20
+	#velocity = Vector2(0, 0)
+	#is_active = false
+	#summon_sound.play()
