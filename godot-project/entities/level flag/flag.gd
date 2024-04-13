@@ -1,5 +1,7 @@
 extends Node2D
 
+# this whole script is a mess LOL
+
 @export var target_scene : String 
 @export var plate1_required : bool = false
 @export var plate2_required : bool = false
