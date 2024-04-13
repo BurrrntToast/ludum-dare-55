@@ -85,6 +85,10 @@ _data = {
 [node name="Guy2" type="CharacterBody2D"]
 script = ExtResource("1_0xox5")
 guy_id = 2.0
+speed = 70.0
+jump_height = 15.0
+time_to_peak_time = 0.25
+time_to_descent_time = 0.25
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_c4jgm")
