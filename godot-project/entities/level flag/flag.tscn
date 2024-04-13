@@ -1,19 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyd5t8xs3rsh6"]
+[gd_scene load_steps=8 format=3 uid="uid://cyd5t8xs3rsh6"]
 
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="1_67hj0"]
 [ext_resource type="Script" path="res://entities/level flag/flag.gd" id="1_viiou"]
+[ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="3_qjcxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhlni"]
 size = Vector2(10, 16)
 
-[node name="Flag" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djxba"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vp5"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imw55"]
+size = Vector2(8, 3)
+
+[node name="Flag" type="Node2D"]
 script = ExtResource("1_viiou")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rhlni")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FlagSprite" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.92549, 0.152941, 1)
 texture = ExtResource("1_67hj0")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="Area2D" type="Area2D" parent="." groups=["flag"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rhlni")
+
+[node name="Plate1" type="Area2D" parent="."]
+
+[node name="Plate1Sprite" type="Sprite2D" parent="Plate1"]
+texture = ExtResource("3_qjcxb")
+
+[node name="Plate1Collision" type="CollisionShape2D" parent="Plate1"]
+visible = false
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_djxba")
+
+[node name="Plate2" type="Area2D" parent="."]
+
+[node name="Plate2Sprite" type="Sprite2D" parent="Plate2"]
+texture = ExtResource("3_qjcxb")
+
+[node name="Plate2Collision" type="CollisionShape2D" parent="Plate2"]
+visible = false
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_h0vp5")
+
+[node name="Plate3" type="Area2D" parent="."]
+
+[node name="Plate3Sprite" type="Sprite2D" parent="Plate3"]
+texture = ExtResource("3_qjcxb")
+
+[node name="Plate3Collision" type="CollisionShape2D" parent="Plate3"]
+visible = false
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_imw55")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Plate1" to="." method="_on_plate_1_area_entered"]
+[connection signal="area_exited" from="Plate1" to="." method="_on_plate_1_area_exited"]
+[connection signal="area_entered" from="Plate2" to="." method="_on_plate_2_area_entered"]
+[connection signal="area_exited" from="Plate2" to="." method="_on_plate_2_area_exited"]
+[connection signal="area_entered" from="Plate3" to="." method="_on_plate_3_area_entered"]
+[connection signal="area_exited" from="Plate3" to="." method="_on_plate_3_area_exited"]

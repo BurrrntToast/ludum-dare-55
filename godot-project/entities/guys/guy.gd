@@ -24,7 +24,7 @@ var is_active : bool = false
 func _ready():
 	pick_random_colour()
 
-func _process(delta):
+func _process(_delta):
 	
 	if is_on_floor() and !is_active:
 		is_active = true
