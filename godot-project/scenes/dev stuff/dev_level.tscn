@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://28286us3jo6x"]
+[gd_scene load_steps=8 format=3 uid="uid://28286us3jo6x"]
 
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="1_4ph17"]
 [ext_resource type="Script" path="res://scenes/dev stuff/dev_level.gd" id="1_ywec5"]
-[ext_resource type="Texture2D" uid="uid://c85sssdpboxc5" path="res://resources/textures/CityBackground.png" id="2_mnh0r"]
-[ext_resource type="Texture2D" uid="uid://bjmavdja4jcw4" path="res://resources/pico-8-extended.png" id="3_t4ns5"]
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_wlnd0"]
 [ext_resource type="PackedScene" uid="uid://cyd5t8xs3rsh6" path="res://entities/level flag/flag.tscn" id="5_irt18"]
 [ext_resource type="PackedScene" uid="uid://v88dd2oug4vi" path="res://entities/guys/guy3.tscn" id="6_iv26c"]
 
@@ -23,10 +22,11 @@ sources/0 = SubResource("TileSetAtlasSource_n408k")
 [node name="DevLevel" type="Node2D"]
 script = ExtResource("1_ywec5")
 
-[node name="CityBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(80, 80)
-texture = ExtResource("2_mnh0r")
+[node name="Background" parent="." instance=ExtResource("2_wlnd0")]
+
+[node name="ShellHolder" type="Node2D" parent="."]
+
+[node name="SpikeHolder" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.113725, 0.168627, 0.32549, 1)
@@ -34,15 +34,9 @@ tile_set = SubResource("TileSet_auysc")
 format = 2
 layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1179667, 0, 0, 1179666, 0, 0, 1179665, 0, 0, 1179664, 0, 0, 1179663, 0, 0, 1179662, 0, 0, 1179661, 0, 0, 1179660, 0, 0, 1179659, 0, 0, 1179658, 0, 0, 1179657, 0, 0, 1179656, 0, 0, 1179655, 0, 0, 1179654, 0, 0, 1179653, 0, 0, 1179652, 0, 0, 1179651, 0, 0, 1179650, 0, 0, 1245186, 0, 0, 1245185, 0, 0, 1245184, 0, 0, 1179649, 0, 0, 1179648, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245189, 0, 0, 1245188, 0, 0, 1245187, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 983041, 0, 0, 983040, 0, 0, 917504, 0, 0, 851968, 0, 0, 786432, 0, 0, 720896, 0, 0, 655360, 0, 0, 589824, 0, 0, 524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 1048576, 0, 0, 917505, 0, 0, 851969, 0, 0, 786433, 0, 0, 720897, 0, 0, 655361, 0, 0, 589825, 0, 0, 524289, 0, 0, 458753, 0, 0, 393217, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 1114114, 0, 0, 786442, 0, 0)
 
-[node name="Pico-8-extended" type="Sprite2D" parent="."]
-position = Vector2(89, -13)
-texture = ExtResource("3_t4ns5")
-
-[node name="ShellHolder" type="Node2D" parent="."]
+[node name="Guy2" parent="." instance=ExtResource("6_iv26c")]
+position = Vector2(11, 34)
 
 [node name="Flag" parent="." instance=ExtResource("5_irt18")]
 position = Vector2(147, 133)
 target = "res://scenes/dev stuff/dev_level2.tscn"
-
-[node name="Guy2" parent="." instance=ExtResource("6_iv26c")]
-position = Vector2(11, 34)
