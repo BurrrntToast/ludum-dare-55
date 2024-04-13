@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://v88dd2oug4vi"]
+
+[ext_resource type="Script" path="res://entities/guys/guy.gd" id="1_6p7wf"]
+[ext_resource type="Texture2D" uid="uid://csi70dbrvm4cn" path="res://resources/textures/guy 3/stand.png" id="2_r3row"]
+[ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="3_h2cg7"]
+[ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/sounds/explosion.wav" id="4_mu30x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
+size = Vector2(12, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
+size = Vector2(12, 13)
+
+[node name="Guy2" type="CharacterBody2D"]
+script = ExtResource("1_6p7wf")
+speed = 100.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_r3row")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_c1mkl")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_as08v")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h2cg7")
+volume_db = -18.366
+bus = &"SFX"
+
+[node name="SummonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mu30x")
+volume_db = -18.366
+bus = &"SFX"
