@@ -18,6 +18,7 @@ config/icon="res://resources/textures/icon.svg"
 [autoload]
 
 GlobalScript="*res://scripts/global script/global_script.tscn"
+SoundManager="*res://scenes/sound manager/sound_manager.gd"
 
 [display]
 

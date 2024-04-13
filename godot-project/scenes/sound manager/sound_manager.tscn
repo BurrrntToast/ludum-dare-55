@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b10bbhpnjoish"]
+
+[ext_resource type="Script" path="res://scenes/sound manager/sound_manager.gd" id="1_0uuo7"]
+[ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/sounds/explosion.wav" id="2_lxjgs"]
+
+[node name="SoundManager" type="Node2D"]
+script = ExtResource("1_0uuo7")
+
+[node name="PlayerSounds" type="Node2D" parent="."]
+
+[node name="SummonSound" type="AudioStreamPlayer" parent="PlayerSounds"]
+stream = ExtResource("2_lxjgs")
+volume_db = -18.0
+bus = &"SFX"
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="PlayerSounds"]
+bus = &"SFX"
