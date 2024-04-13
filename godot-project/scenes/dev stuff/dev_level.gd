@@ -26,6 +26,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("summon"):
 		make_static_guy()
 		summon_random_guy()
+		SoundManager.play_summon_sound()
 	
 func make_static_guy():
 	var new_static_guy = STATIC_GUY.instantiate()
