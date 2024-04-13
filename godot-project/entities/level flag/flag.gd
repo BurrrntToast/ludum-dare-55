@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var target : String 
+@export var target_scene : String 
 @export var plate1_required : bool = false
 @export var plate2_required : bool = false
 @export var plate3_required : bool = false
@@ -42,8 +42,7 @@ func should_flag_be_active():
 		flag_active = true
 	
 func _on_area_2d_area_entered(_area):
-	pass#get_tree().change_scene_to_file(target)
-	# replace later with scene transition and stuff
+	TransitionManager.transition_to_scene(target_scene)
 
 func _on_plate_1_area_entered(_area):
 	should_flag_be_active()

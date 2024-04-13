@@ -22,6 +22,8 @@ func _ready():
 	player_holder.add_child(default_guy)
 	current_guy = default_guy
 	
+	TransitionManager.transition_in()
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("summon"):
 		make_static_guy()
