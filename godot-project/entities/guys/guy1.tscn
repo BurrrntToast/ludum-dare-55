@@ -21,7 +21,7 @@ texture = ExtResource("2_i5idd")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_c1mkl")
 
-[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+[node name="Area2D" type="Area2D" parent="." groups=["guy"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 visible = false
