@@ -3,7 +3,6 @@ extends CharacterBody2D
 const STATIC_PLAYER = preload("res://entities/static player/static_player.tscn")
 
 @onready var jump_sound = $JumpSound
-@onready var summon_sound = $SummonSound
 @onready var sprite = $Sprite
 
 @export var guy_id : float = 0
