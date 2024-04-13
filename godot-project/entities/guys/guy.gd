@@ -37,6 +37,7 @@ func _process(delta):
 		STATIC_PLAYER_INSTANCE.setup(guy_id - 1, current_colour)
 		pick_random_colour()
 		global_position.y = -20
+		velocity = Vector2(0, 0)
 		is_active = false
 		summon_sound.play()
 
