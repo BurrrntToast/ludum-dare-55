@@ -33,6 +33,8 @@ func make_static_guy():
 	shell_holder.add_child(new_static_guy)
 	new_static_guy.setup(current_guy.guy_id - 1, current_guy.current_colour)
 
+	guy_spawn_pos.global_position = current_guy.global_position
+	guy_spawn_pos.global_position.y = -20
 	current_guy.queue_free()
 	current_guy = null
 
@@ -42,9 +44,3 @@ func summon_random_guy():
 	new_guy.global_position = guy_spawn_pos.global_position
 	player_holder.add_child(new_guy)
 	current_guy = new_guy
-	
-#
-#func player_summoned():
-	#velocity = Vector2(0, 0)
-	#is_active = false
-	#summon_sound.play()
