@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqdvpfe7mlpsa"]
+[gd_scene load_steps=11 format=3 uid="uid://cqdvpfe7mlpsa"]
 
 [ext_resource type="Script" path="res://entities/guys/guy.gd" id="1_0xox5"]
-[ext_resource type="Texture2D" uid="uid://dkn3s2nt5qybp" path="res://resources/textures/guy 2/stand.png" id="2_cmxp4"]
+[ext_resource type="Texture2D" uid="uid://diegh2nnua68u" path="res://resources/textures/guy 2/guy2_spritesheet.png" id="2_c4jgm"]
 [ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="3_28ifw"]
-[ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/sounds/explosion.wav" id="4_7yhuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
 size = Vector2(12, 10)
@@ -11,12 +10,85 @@ size = Vector2(12, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
 size = Vector2(12, 10)
 
+[sub_resource type="Animation" id="Animation_5mmi0"]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_2vrq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cqub5"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_cky5t"]
+resource_name = "summon"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgwa6"]
+_data = {
+"RESET": SubResource("Animation_2vrq1"),
+"idle": SubResource("Animation_5mmi0"),
+"summon": SubResource("Animation_cky5t"),
+"walk": SubResource("Animation_cqub5")
+}
+
 [node name="Guy2" type="CharacterBody2D"]
 script = ExtResource("1_0xox5")
 guy_id = 2.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_cmxp4")
+texture = ExtResource("2_c4jgm")
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -34,7 +106,7 @@ stream = ExtResource("3_28ifw")
 volume_db = -18.366
 bus = &"SFX"
 
-[node name="SummonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_7yhuh")
-volume_db = -18.366
-bus = &"SFX"
+[node name="SpriteAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xgwa6")
+}

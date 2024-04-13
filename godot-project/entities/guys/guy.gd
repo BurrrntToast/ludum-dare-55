@@ -4,6 +4,7 @@ const STATIC_PLAYER = preload("res://entities/static player/static_player.tscn")
 
 @onready var jump_sound = $JumpSound
 @onready var sprite = $Sprite
+@onready var sprite_anim = $SpriteAnim
 
 @export var guy_id : float = 0
 @export var speed : float = 150.0
@@ -45,8 +46,10 @@ func handle_movement_input():
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
+		play_walk_anim()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		play_idle_anim()
 	
 func jump():
 	velocity.y = jump_velocity
@@ -60,13 +63,9 @@ func pick_random_colour():
 	current_colour = all_colours.pick_random()
 	sprite.self_modulate = current_colour
 
-#func freeze():
-	#var STATIC_PLAYER_INSTANCE = STATIC_PLAYER.instantiate()
-	#STATIC_PLAYER_INSTANCE.global_position = global_position
-	#GlobalScript.current_shell_holder.add_child(STATIC_PLAYER_INSTANCE)
-	#STATIC_PLAYER_INSTANCE.setup(guy_id - 1, current_colour)
-	#pick_random_colour()
-	#global_position.y = -20
-	#velocity = Vector2(0, 0)
-	#is_active = false
-	#summon_sound.play()
+func play_walk_anim():
+	if !sprite_anim.is_playing():
+		sprite_anim.play("walk")
+
+func play_idle_anim():
+	sprite_anim.play("idle")
