@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var speed : float = 150.0
+@export var speed : float = 150.0
 
-@export var jump_height : float = 200.0
+@export var jump_height : float = 20.0
 @export var time_to_peak_time : float = 0.2
 @export var time_to_descent_time : float = 0.2
 
