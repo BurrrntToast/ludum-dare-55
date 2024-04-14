@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qa10f2px0y0w"]
+
+[ext_resource type="Script" path="res://entities/no summon zone/no_summon_zone.gd" id="1_e0jfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxu0p"]
+size = Vector2(0, 0)
+
+[node name="NoSummonZone" type="Area2D" groups=["no_summon_zone"]]
+script = ExtResource("1_e0jfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uxu0p")
+
+[node name="Zone" type="ColorRect" parent="."]
+visible = false
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(1, 0, 0.301961, 0.196078)

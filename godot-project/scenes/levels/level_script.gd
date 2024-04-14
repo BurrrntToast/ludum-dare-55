@@ -26,7 +26,7 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("summon"):
-		if current_guy.global_position.y > 0.0:
+		if current_guy.global_position.y > 0.0 and current_guy.can_summon:
 			make_static_guy()
 			summon_random_guy()
 			SoundManager.play_summon_sound()

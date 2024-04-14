@@ -21,9 +21,11 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 @onready var current_colour : String = "" 
 
 var is_active : bool = false
+var can_summon : bool = true
 
 func _ready():
 	pick_random_colour()
+	can_summon = true
 
 func _process(_delta):
 	
@@ -32,7 +34,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
-	
+	print(can_summon)
 	if is_active:
 		handle_movement_input()
 
@@ -73,3 +75,12 @@ func play_idle_anim():
 func play_walk_sound():
 	if is_on_floor():
 		SoundManager.play_walk_sound()
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("no_summon_zone"):
+		can_summon = false
+
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("no_summon_zone"):
+		can_summon = true
