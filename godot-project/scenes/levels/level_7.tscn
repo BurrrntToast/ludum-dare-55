@@ -44,7 +44,7 @@ script = ExtResource("1_c142v")
 [node name="PlayerHolder" type="Node2D" parent="."]
 
 [node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
-position = Vector2(4, 149)
+position = Vector2(4, 145)
 
 [node name="SpawnArrow" type="Sprite2D" parent="PlayerHolder/GuySpawnPos"]
 position = Vector2(0, -4)

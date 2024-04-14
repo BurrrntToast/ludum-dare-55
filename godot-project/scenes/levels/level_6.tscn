@@ -44,7 +44,7 @@ script = ExtResource("1_5b8gj")
 [node name="PlayerHolder" type="Node2D" parent="."]
 
 [node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
-position = Vector2(13, 147)
+position = Vector2(14, 143)
 
 [node name="SpawnArrow" type="Sprite2D" parent="PlayerHolder/GuySpawnPos"]
 texture = ExtResource("4_ywlde")
