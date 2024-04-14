@@ -30,6 +30,9 @@ func _process(_delta):
 		summon_random_guy()
 		SoundManager.play_summon_sound()
 	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
 func make_static_guy():
 	var new_static_guy = STATIC_GUY.instantiate()
 	new_static_guy.global_position = current_guy.global_position
