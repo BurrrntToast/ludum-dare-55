@@ -21,6 +21,7 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 @onready var current_colour : String = "" 
 
 var is_active : bool = false
+var on_ground : bool = true
 var can_summon : bool = true
 
 func _ready():
@@ -31,10 +32,14 @@ func _process(_delta):
 	
 	if is_on_floor() and !is_active:
 		is_active = true
+		
+	if is_on_floor() and !on_ground:
+		sqeeze()
+		on_ground = true
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
-	print(can_summon)
+
 	if is_active:
 		handle_movement_input()
 
@@ -55,7 +60,9 @@ func handle_movement_input():
 	
 func jump():
 	velocity.y = jump_velocity
+	on_ground = false
 	jump_sound.play()
+	stretch()
 	
 func get_gravity():
 	if velocity.y < 0.0: return jump_gravity
@@ -76,6 +83,15 @@ func play_walk_sound():
 	if is_on_floor():
 		SoundManager.play_walk_sound()
 
+func stretch():
+	var stretch_tween = create_tween()
+	stretch_tween.tween_property(self, "scale", Vector2(0.8, 1.2), 0.1).set_trans(Tween.TRANS_CUBIC)
+	stretch_tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+
+func sqeeze():
+	var sqeeze_tween = create_tween()
+	sqeeze_tween.tween_property(self, "scale", Vector2(1.2, .8), 0.1).set_trans(Tween.TRANS_CUBIC)
+	sqeeze_tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("no_summon_zone"):
