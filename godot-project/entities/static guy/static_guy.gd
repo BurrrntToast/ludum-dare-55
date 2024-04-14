@@ -5,7 +5,7 @@ const guy2_spritesheet = preload("res://resources/textures/guy 2/guy2_spriteshee
 const guy3_spritesheet = preload("res://resources/textures/guy 3/guy3_spritesheet.png")
 
 @onready var guy_sprite_array = [guy1_spritesheet, guy2_spritesheet, guy3_spritesheet]
-@onready var guy_collision_size_array = [Vector2(12, 8), Vector2(12, 10), Vector2(12, 13)]
+@onready var guy_collision_size_array = [Vector2(8, 8), Vector2(8, 10), Vector2(8, 13)]
 @onready var guy_collision_position_array = [Vector2(0, 4), Vector2(0, 3), Vector2(0, 1.5)]
 @onready var sprite = $Sprite
 @onready var sprite_mask = $SpriteMask
