@@ -48,4 +48,4 @@ layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1179667, 0, 0, 1179666, 0, 0
 
 [node name="Flag" parent="." instance=ExtResource("6_233uh")]
 position = Vector2(147, 133)
-target_scene = "res://scenes/dev stuff/dev_level.tscn"
+target_scene = "res://scenes/levels/level_2.tscn"
