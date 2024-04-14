@@ -34,7 +34,7 @@ size = Vector2(8, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imw55"]
 size = Vector2(8, 3)
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate2" type="Node2D"]
 script = ExtResource("1_c142v")
 
 [node name="Background" parent="." instance=ExtResource("2_nbjag")]

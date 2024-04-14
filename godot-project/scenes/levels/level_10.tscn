@@ -102,7 +102,7 @@ position = Vector2(-17, -108)
 texture = ExtResource("8_b1p7u")
 
 [node name="Plate3Collision" type="CollisionShape2D" parent="Flag/Plate3"]
-position = Vector2(0, 2.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_imw55")
 
 [node name="PlayerHolder" type="Node2D" parent="."]
