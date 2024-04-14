@@ -60,7 +60,7 @@ script = ExtResource("1_e6s40")
 [node name="Flag" type="Node2D" parent="."]
 position = Vector2(80, 48)
 script = ExtResource("4_w22g5")
-target_scene = "res://scenes/levels/level_1.tscn"
+target_scene = "res://scenes/levels/level_10.tscn"
 plate1_required = true
 plate2_required = true
 
