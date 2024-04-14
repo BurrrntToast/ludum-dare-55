@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b10bbhpnjoish"]
+[gd_scene load_steps=5 format=3 uid="uid://b10bbhpnjoish"]
 
 [ext_resource type="Script" path="res://scenes/sound manager/sound_manager.gd" id="1_0uuo7"]
 [ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/sounds/explosion.wav" id="2_lxjgs"]
 [ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="3_bca0u"]
+[ext_resource type="AudioStream" uid="uid://d24hmrqsy2ukv" path="res://resources/sounds/walk.mp3" id="3_v7cdt"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_0uuo7")
@@ -12,6 +13,11 @@ script = ExtResource("1_0uuo7")
 [node name="SummonSound" type="AudioStreamPlayer" parent="PlayerSounds"]
 stream = ExtResource("2_lxjgs")
 volume_db = -18.0
+bus = &"SFX"
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="PlayerSounds"]
+stream = ExtResource("3_v7cdt")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="PlayerSounds"]

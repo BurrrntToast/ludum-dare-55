@@ -69,3 +69,6 @@ func play_walk_anim():
 
 func play_idle_anim():
 	sprite_anim.play("idle")
+	
+func play_walk_sound():
+	SoundManager.play_walk_sound()
