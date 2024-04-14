@@ -26,9 +26,10 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("summon"):
-		make_static_guy()
-		summon_random_guy()
-		SoundManager.play_summon_sound()
+		if current_guy.global_position.y > 0.0:
+			make_static_guy()
+			summon_random_guy()
+			SoundManager.play_summon_sound()
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
