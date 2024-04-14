@@ -58,7 +58,7 @@ script = ExtResource("1_lr0u8")
 [node name="LevelUI" parent="." instance=ExtResource("3_1p615")]
 
 [node name="Flag" type="Node2D" parent="."]
-position = Vector2(149, 143)
+position = Vector2(145, 143)
 script = ExtResource("6_yelal")
 target_scene = "res://scenes/levels/level_6.tscn"
 plate1_required = true
@@ -72,7 +72,7 @@ texture = ExtResource("7_1wj8l")
 shape = SubResource("RectangleShape2D_rhlni")
 
 [node name="Plate1" type="Area2D" parent="Flag"]
-position = Vector2(-67, 4)
+position = Vector2(-67, -3)
 
 [node name="Plate1Sprite" type="Sprite2D" parent="Flag/Plate1"]
 texture = ExtResource("8_uagqw")
@@ -106,7 +106,7 @@ shape = SubResource("RectangleShape2D_imw55")
 [node name="PlayerHolder" type="Node2D" parent="."]
 
 [node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
-position = Vector2(6, 151)
+position = Vector2(14, 151)
 
 [node name="SpawnArrow" type="Sprite2D" parent="PlayerHolder/GuySpawnPos"]
 position = Vector2(0, -4)
@@ -120,7 +120,7 @@ texture = ExtResource("4_mo0ek")
 modulate = Color(0.113725, 0.168627, 0.32549, 1)
 tile_set = SubResource("TileSet_auysc")
 format = 2
-layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1245186, 0, 0, 1245185, 0, 0, 1245184, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245189, 0, 0, 1245188, 0, 0, 1245187, 0, 0)
+layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1245186, 0, 0, 1245185, 0, 0, 1245184, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245189, 0, 0, 1245188, 0, 0, 1245187, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1179667, 0, 0, 1114131, 0, 0, 1048595, 0, 0, 983059, 0, 0, 917523, 0, 0, 851987, 0, 0, 786451, 0, 0, 720915, 0, 0, 655379, 0, 0, 589843, 0, 0, 524307, 0, 0, 458771, 0, 0, 393235, 0, 0, 327699, 0, 0, 262163, 0, 0, 196627, 0, 0, 131091, 0, 0, 65555, 0, 0, 19, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0)
 
 [connection signal="area_entered" from="Flag/Area2D" to="Flag" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Flag/Plate1" to="Flag" method="_on_plate_1_area_entered"]
