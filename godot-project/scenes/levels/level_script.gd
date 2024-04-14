@@ -3,7 +3,7 @@ extends Node2D
 const GUY_1 = preload("res://entities/guys/guy1.tscn")
 const GUY_2 = preload("res://entities/guys/guy2.tscn")
 const GUY_3 = preload("res://entities/guys/guy3.tscn")
-const STATIC_GUY = preload("res://entities/static player/static_player.tscn")
+const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 
 @onready var array_of_guys = [GUY_1, GUY_2, GUY_3]
 

@@ -1,14 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuq3w1clum66o"]
+[gd_scene load_steps=10 format=3 uid="uid://cb2oop5syt6a1"]
 
-[ext_resource type="Script" path="res://entities/guys/guy.gd" id="1_v3wnx"]
-[ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="2_738ji"]
-[ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="2_mihuj"]
+[ext_resource type="Script" path="res://entities/static guy/static_guy.gd" id="1_elq7g"]
+[ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="2_cya0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
-size = Vector2(12, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
-size = Vector2(12, 8)
+size = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_2vrq1"]
 length = 0.001
@@ -23,6 +21,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpriteMask:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpriteMask:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_5mmi0"]
@@ -55,6 +77,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [4, 5]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpriteMask:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.392157)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpriteMask:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
 
 [sub_resource type="Animation" id="Animation_cqub5"]
 resource_name = "walk"
@@ -81,37 +127,32 @@ _data = {
 "walk": SubResource("Animation_cqub5")
 }
 
-[node name="Guy1" type="CharacterBody2D"]
-script = ExtResource("1_v3wnx")
-guy_id = 1.0
-speed = 60.0
-jump_height = 10.0
-time_to_peak_time = 0.15
-time_to_descent_time = 0.15
+[node name="StaticGuy" type="StaticBody2D"]
+script = ExtResource("1_elq7g")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 0.301961, 1)
-texture = ExtResource("2_mihuj")
+texture = ExtResource("2_cya0w")
 hframes = 6
+
+[node name="SpriteMask" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_cya0w")
+hframes = 6
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_c1mkl")
 
 [node name="Area2D" type="Area2D" parent="." groups=["guy"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 visible = false
-position = Vector2(0, 4)
+position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_as08v")
 
-[node name="JumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_738ji")
-volume_db = -18.366
-bus = &"SFX"
-
 [node name="SpriteAnim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_xgwa6")
 }

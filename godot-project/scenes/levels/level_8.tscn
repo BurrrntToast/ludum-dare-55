@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c2ssks2vjap0j"]
 
-[ext_resource type="Script" path="res://scenes/dev stuff/dev_level.gd" id="1_2xmos"]
+[ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_2xmos"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_bgt4g"]
 [ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="3_8ydk8"]
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="5_6nhmg"]
