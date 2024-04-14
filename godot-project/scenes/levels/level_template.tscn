@@ -41,12 +41,6 @@ script = ExtResource("1_twm6n")
 
 [node name="Background" parent="." instance=ExtResource("2_lx1s6")]
 
-[node name="LevelUI" parent="." instance=ExtResource("3_25uqw")]
-
-[node name="Flag" parent="." instance=ExtResource("6_ed3cx")]
-position = Vector2(129, 137)
-target_scene = "res://scenes/levels/level_1.tscn"
-
 [node name="PlayerHolder" type="Node2D" parent="."]
 
 [node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
@@ -56,9 +50,15 @@ position = Vector2(48, 63)
 position = Vector2(0, -4)
 texture = ExtResource("4_qfdrs")
 
+[node name="LevelUI" parent="." instance=ExtResource("3_25uqw")]
+
+[node name="Flag" parent="." instance=ExtResource("6_ed3cx")]
+position = Vector2(129, 137)
+target_scene = "res://scenes/levels/level_1.tscn"
+
 [node name="ShellHolder" type="Node2D" parent="."]
 
-[node name="SpikeHolder" type="Node2D" parent="."]
+[node name="ZoneHolder" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.113725, 0.168627, 0.32549, 1)

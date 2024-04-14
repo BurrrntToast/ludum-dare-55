@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="2_mihuj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
-size = Vector2(12, 8)
+size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
-size = Vector2(12, 8)
+size = Vector2(8, 8)
 
 [sub_resource type="Animation" id="Animation_2vrq1"]
 length = 0.001
@@ -113,14 +113,12 @@ texture = ExtResource("2_mihuj")
 hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_c1mkl")
 
 [node name="Area2D" type="Area2D" parent="." groups=["guy"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_as08v")
 
@@ -133,3 +131,6 @@ bus = &"SFX"
 libraries = {
 "": SubResource("AnimationLibrary_xgwa6")
 }
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
