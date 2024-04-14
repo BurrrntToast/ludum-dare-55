@@ -71,4 +71,5 @@ func play_idle_anim():
 	sprite_anim.play("idle")
 	
 func play_walk_sound():
-	SoundManager.play_walk_sound()
+	if is_on_floor():
+		SoundManager.play_walk_sound()

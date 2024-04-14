@@ -58,7 +58,7 @@ texture = ExtResource("4_qfdrs")
 
 [node name="ShellHolder" type="Node2D" parent="."]
 
-[node name="SpikeHolder" type="Node2D" parent="."]
+[node name="ZoneHolder" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.113725, 0.168627, 0.32549, 1)
