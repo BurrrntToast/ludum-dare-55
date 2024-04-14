@@ -36,8 +36,9 @@ func make_static_guy():
 	shell_holder.add_child(new_static_guy)
 	new_static_guy.setup(current_guy.guy_id - 1, current_guy.current_colour)
 
-	guy_spawn_pos.global_position = current_guy.global_position
+	guy_spawn_pos.global_position.x = current_guy.global_position.x
 	guy_spawn_pos.global_position.y = -20
+	
 	current_guy.queue_free()
 	current_guy = null
 
