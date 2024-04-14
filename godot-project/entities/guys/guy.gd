@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const STATIC_PLAYER = preload("res://entities/static player/static_player.tscn")
+const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 
 @onready var jump_sound = $JumpSound
 @onready var sprite = $Sprite

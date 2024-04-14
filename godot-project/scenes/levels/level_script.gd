@@ -3,7 +3,7 @@ extends Node2D
 const GUY_1 = preload("res://entities/guys/guy1.tscn")
 const GUY_2 = preload("res://entities/guys/guy2.tscn")
 const GUY_3 = preload("res://entities/guys/guy3.tscn")
-const STATIC_GUY = preload("res://entities/static player/static_player.tscn")
+const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 
 @onready var array_of_guys = [GUY_1, GUY_2, GUY_3]
 
@@ -30,14 +30,18 @@ func _process(_delta):
 		summon_random_guy()
 		SoundManager.play_summon_sound()
 	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
 func make_static_guy():
 	var new_static_guy = STATIC_GUY.instantiate()
 	new_static_guy.global_position = current_guy.global_position
 	shell_holder.add_child(new_static_guy)
 	new_static_guy.setup(current_guy.guy_id - 1, current_guy.current_colour)
 
-	guy_spawn_pos.global_position = current_guy.global_position
+	guy_spawn_pos.global_position.x = current_guy.global_position.x
 	guy_spawn_pos.global_position.y = -20
+	
 	current_guy.queue_free()
 	current_guy = null
 

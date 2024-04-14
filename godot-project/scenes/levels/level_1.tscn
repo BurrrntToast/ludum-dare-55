@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://4y2avfdfyq7q"]
 
-[ext_resource type="Script" path="res://scenes/dev stuff/dev_level.gd" id="1_5bxu4"]
+[ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_5bxu4"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_auddj"]
 [ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="3_3ptf8"]
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="4_acyl5"]
@@ -14,18 +14,35 @@ texture_region_size = Vector2i(8, 8)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 4, -4, 4)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_auysc"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n408k")
 
-[node name="LevelTemplate2" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource("1_5bxu4")
 
 [node name="Background" parent="." instance=ExtResource("2_auddj")]
 
 [node name="LevelUI" parent="." instance=ExtResource("3_3ptf8")]
+
+[node name="Flag" parent="." instance=ExtResource("6_233uh")]
+position = Vector2(129, 137)
+target_scene = "res://scenes/levels/level_2.tscn"
 
 [node name="PlayerHolder" type="Node2D" parent="."]
 
@@ -44,8 +61,4 @@ texture = ExtResource("4_acyl5")
 modulate = Color(0.113725, 0.168627, 0.32549, 1)
 tile_set = SubResource("TileSet_auysc")
 format = 2
-layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1179667, 0, 0, 1179666, 0, 0, 1179665, 0, 0, 1179664, 0, 0, 1179663, 0, 0, 1179662, 0, 0, 1179661, 0, 0, 1179660, 0, 0, 1179659, 0, 0, 1179658, 0, 0, 1179657, 0, 0, 1179656, 0, 0, 1179655, 0, 0, 1179654, 0, 0, 1179653, 0, 0, 1179652, 0, 0, 1179651, 0, 0, 1179650, 0, 0, 1245186, 0, 0, 1245185, 0, 0, 1245184, 0, 0, 1179649, 0, 0, 1179648, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245189, 0, 0, 1245188, 0, 0, 1245187, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048576, 0, 0, 1114114, 0, 0, 327696, 0, 0, 262160, 0, 0, 196624, 0, 0, 131088, 0, 0, 65552, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 262162, 0, 0, 327698, 0, 0)
-
-[node name="Flag" parent="." instance=ExtResource("6_233uh")]
-position = Vector2(147, 133)
-target_scene = "res://scenes/levels/level_2.tscn"
+layer_0/tile_data = PackedInt32Array(1245203, 0, 0, 1179667, 0, 0, 1179666, 0, 0, 1179665, 0, 0, 1179664, 0, 0, 1179663, 0, 0, 1179662, 0, 0, 1179661, 0, 0, 1179660, 0, 0, 1179659, 0, 0, 1179658, 0, 0, 1179657, 0, 0, 1179656, 0, 0, 1179655, 0, 0, 1179654, 0, 0, 1179653, 0, 0, 1179652, 0, 0, 1179651, 0, 0, 1179650, 0, 0, 1245186, 0, 0, 1245185, 0, 0, 1245184, 0, 0, 1179649, 0, 0, 1179648, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245189, 0, 0, 1245188, 0, 0, 1245187, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048576, 0, 0, 1114114, 0, 0, 1114131, 0, 0, 1114130, 0, 0, 1114129, 0, 0, 1048593, 0, 0, 983057, 0, 0, 917521, 0, 0, 851985, 0, 0, 851986, 0, 0, 917522, 0, 0, 983058, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 983059, 0, 0, 917523, 0, 0, 851987, 0, 0, 851970, 0, 0, 851969, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 917506, 0, 0, 917505, 0, 0, 786432, 131072, 0, 786433, 131072, 0, 786434, 131072, 0, 786449, 131072, 0, 786450, 131072, 0, 786451, 131072, 0)
