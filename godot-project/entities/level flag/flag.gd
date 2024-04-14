@@ -61,17 +61,17 @@ func _on_plate_1_area_exited(_area):
 	should_flag_be_active()
 
 func _on_plate_2_area_entered(_area):
-	should_flag_be_active()
 	plate2_active = true
+	should_flag_be_active()
 
 func _on_plate_2_area_exited(_area):
-	should_flag_be_active()
 	plate2_active = false
+	should_flag_be_active()
 
 func _on_plate_3_area_entered(_area):
-	should_flag_be_active()
 	plate3_active = true
+	should_flag_be_active()
 
 func _on_plate_3_area_exited(_area):
-	should_flag_be_active()
 	plate3_active = false
+	should_flag_be_active()
