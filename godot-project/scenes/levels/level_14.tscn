@@ -77,7 +77,7 @@ texture = ExtResource("3_yt6kj")
 [node name="Flag" type="Node2D" parent="."]
 position = Vector2(81, 145)
 script = ExtResource("5_qvx2n")
-target_scene = "res://scenes/levels/level_1.tscn"
+target_scene = "res://scenes/levels/end.tscn"
 plate1_required = true
 plate2_required = true
 plate3_required = true

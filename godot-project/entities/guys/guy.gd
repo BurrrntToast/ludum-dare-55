@@ -39,6 +39,7 @@ func _process(_delta):
 		
 	if position.y > 170 or position.x > 170 or position.x < -10:
 		respawn()
+		SoundManager.play_death_sound()
 		
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity

@@ -54,6 +54,7 @@ func should_flag_be_active():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("guy") and flag_active:
 		TransitionManager.transition_to_scene(target_scene)
+		SoundManager.play_portal_sound()
 
 func _on_plate_1_area_entered(area):
 	plate1_active = true
