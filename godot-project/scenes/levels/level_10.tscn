@@ -108,7 +108,7 @@ shape = SubResource("RectangleShape2D_imw55")
 [node name="PlayerHolder" type="Node2D" parent="."]
 
 [node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
-position = Vector2(13, 15)
+position = Vector2(13, 9)
 
 [node name="SpawnArrow" type="Sprite2D" parent="PlayerHolder/GuySpawnPos"]
 position = Vector2(0, -4)

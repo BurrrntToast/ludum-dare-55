@@ -1,0 +1,183 @@
+[gd_scene load_steps=18 format=3 uid="uid://dfawufkejqy0o"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_3y8v5"]
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_lnewo"]
+[ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="3_yt6kj"]
+[ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="4_wyudu"]
+[ext_resource type="Script" path="res://entities/level flag/flag.gd" id="5_qvx2n"]
+[ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="6_mlx1v"]
+[ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="6_t8xh6"]
+[ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="7_11db6"]
+[ext_resource type="Script" path="res://entities/no summon zone/no_summon_zone.gd" id="8_dmlmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhlni"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djxba"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vp5"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imw55"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxu0p"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n54pm"]
+size = Vector2(0, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n408k"]
+texture = ExtResource("6_mlx1v")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 0, -4, 0)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 4, -4, 4)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, 4, -4, 4, 4, 0, 4)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 0, -4, 0, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_auysc"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n408k")
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource("1_3y8v5")
+
+[node name="Background" parent="." instance=ExtResource("2_lnewo")]
+
+[node name="PlayerHolder" type="Node2D" parent="."]
+
+[node name="GuySpawnPos" type="Marker2D" parent="PlayerHolder"]
+position = Vector2(5, 10)
+
+[node name="SpawnArrow" type="Sprite2D" parent="PlayerHolder/GuySpawnPos"]
+position = Vector2(0, -4)
+texture = ExtResource("3_yt6kj")
+
+[node name="LevelUI" parent="." instance=ExtResource("4_wyudu")]
+
+[node name="Flag" type="Node2D" parent="."]
+position = Vector2(81, 145)
+script = ExtResource("5_qvx2n")
+target_scene = "res://scenes/levels/level_1.tscn"
+plate1_required = true
+plate2_required = true
+plate3_required = true
+
+[node name="FlagSprite" type="Sprite2D" parent="Flag"]
+texture = ExtResource("6_t8xh6")
+
+[node name="Area2D" type="Area2D" parent="Flag" groups=["flag"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag/Area2D"]
+shape = SubResource("RectangleShape2D_rhlni")
+
+[node name="Plate1" type="Area2D" parent="Flag"]
+
+[node name="Plate1Sprite" type="Sprite2D" parent="Flag/Plate1"]
+position = Vector2(-69, -21)
+texture = ExtResource("7_11db6")
+
+[node name="Plate1Collision" type="CollisionShape2D" parent="Flag/Plate1"]
+position = Vector2(-69, -18.5)
+shape = SubResource("RectangleShape2D_djxba")
+
+[node name="Plate2" type="Area2D" parent="Flag"]
+position = Vector2(0, -21)
+
+[node name="Plate2Sprite" type="Sprite2D" parent="Flag/Plate2"]
+texture = ExtResource("7_11db6")
+
+[node name="Plate2Collision" type="CollisionShape2D" parent="Flag/Plate2"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_h0vp5")
+
+[node name="Plate3" type="Area2D" parent="Flag"]
+position = Vector2(67, -21)
+
+[node name="Plate3Sprite" type="Sprite2D" parent="Flag/Plate3"]
+texture = ExtResource("7_11db6")
+
+[node name="Plate3Collision" type="CollisionShape2D" parent="Flag/Plate3"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_imw55")
+
+[node name="ShellHolder" type="Node2D" parent="."]
+
+[node name="ZoneHolder" type="Node2D" parent="."]
+
+[node name="NoSummonZone" type="Area2D" parent="ZoneHolder" groups=["no_summon_zone"]]
+position = Vector2(33.948, 102.893)
+script = ExtResource("8_dmlmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneHolder/NoSummonZone"]
+visible = false
+shape = SubResource("RectangleShape2D_uxu0p")
+
+[node name="Zone" type="ColorRect" parent="ZoneHolder/NoSummonZone"]
+offset_left = -34.0
+offset_top = -103.0
+offset_right = 126.0
+offset_bottom = -87.0
+color = Color(1, 0, 0.301961, 0.196078)
+
+[node name="NoSummonZone2" type="Area2D" parent="ZoneHolder" groups=["no_summon_zone"]]
+position = Vector2(33.948, 102.893)
+script = ExtResource("8_dmlmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneHolder/NoSummonZone2"]
+visible = false
+shape = SubResource("RectangleShape2D_n54pm")
+
+[node name="Zone" type="ColorRect" parent="ZoneHolder/NoSummonZone2"]
+offset_left = -34.0
+offset_top = -70.0
+offset_right = 38.0
+offset_bottom = 2.0
+color = Color(1, 0, 0.301961, 0.196078)
+
+[node name="NoSummonZone3" type="Area2D" parent="ZoneHolder" groups=["no_summon_zone"]]
+position = Vector2(33.948, 102.893)
+script = ExtResource("8_dmlmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneHolder/NoSummonZone3"]
+visible = false
+shape = SubResource("RectangleShape2D_n54pm")
+
+[node name="Zone" type="ColorRect" parent="ZoneHolder/NoSummonZone3"]
+offset_left = 54.0
+offset_top = -70.0
+offset_right = 126.0
+offset_bottom = 2.0
+color = Color(1, 0, 0.301961, 0.196078)
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0.113725, 0.168627, 0.32549, 1)
+tile_set = SubResource("TileSet_auysc")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245193, 0, 0, 1245194, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131088, 0, 0, 851970, 0, 0, 851969, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 851977, 0, 0, 851978, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 917523, 0, 0, 983059, 0, 0, 1048595, 0, 0, 1048594, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 458762, 0, 0, 524298, 0, 0, 524297, 0, 0, 589833, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 720905, 0, 0, 786441, 0, 0, 786442, 0, 0, 655369, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0)
+
+[connection signal="area_entered" from="Flag/Area2D" to="Flag" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Flag/Plate1" to="Flag" method="_on_plate_1_area_entered"]
+[connection signal="area_exited" from="Flag/Plate1" to="Flag" method="_on_plate_1_area_exited"]
+[connection signal="area_entered" from="Flag/Plate2" to="Flag" method="_on_plate_2_area_entered"]
+[connection signal="area_exited" from="Flag/Plate2" to="Flag" method="_on_plate_2_area_exited"]
+[connection signal="area_entered" from="Flag/Plate3" to="Flag" method="_on_plate_3_area_entered"]
+[connection signal="area_exited" from="Flag/Plate3" to="Flag" method="_on_plate_3_area_exited"]
