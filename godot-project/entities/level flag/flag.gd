@@ -52,25 +52,34 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("guy") and flag_active:
 		TransitionManager.transition_to_scene(target_scene)
 
-func _on_plate_1_area_entered(_area):
+func _on_plate_1_area_entered(area):
 	plate1_active = true
 	should_flag_be_active()
+	
+	if area.is_in_group("static"):
+		plate3_collision.set_deferred("disabled", true)
 
 func _on_plate_1_area_exited(_area):
 	plate1_active = false
 	should_flag_be_active()
 
-func _on_plate_2_area_entered(_area):
+func _on_plate_2_area_entered(area):
 	plate2_active = true
 	should_flag_be_active()
+
+	if area.is_in_group("static"):
+		plate2_collision.set_deferred("disabled", true)
 
 func _on_plate_2_area_exited(_area):
 	plate2_active = false
 	should_flag_be_active()
 
-func _on_plate_3_area_entered(_area):
+func _on_plate_3_area_entered(area):
 	plate3_active = true
 	should_flag_be_active()
+	
+	if area.is_in_group("static"):
+		plate3_collision.set_deferred("disabled", true)
 
 func _on_plate_3_area_exited(_area):
 	plate3_active = false
