@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy5i5beoymg2x"]
+
+[sub_resource type="Gradient" id="Gradient_tjsid"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.156863, 0, 1)
+
+[node name="PortalParticle" type="CPUParticles2D"]
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = 150.0
+angular_velocity_max = 200.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_tjsid")

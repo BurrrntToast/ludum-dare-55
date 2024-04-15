@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://drt0pqdnlj0p"]
+[gd_scene load_steps=16 format=3 uid="uid://drt0pqdnlj0p"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_5b8gj"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_a100q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="4_ywlde"]
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="5_yabr2"]
 [ext_resource type="Script" path="res://entities/level flag/flag.gd" id="6_q7ik3"]
+[ext_resource type="PackedScene" uid="uid://cy5i5beoymg2x" path="res://scenes/portal particle/portal_particle.tscn" id="7_46dtf"]
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="7_as00u"]
 [ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="8_4sf8g"]
 
@@ -65,7 +66,10 @@ script = ExtResource("6_q7ik3")
 target_scene = "res://scenes/levels/level_7.tscn"
 plate1_required = true
 
+[node name="PortalParticle" parent="Flag" instance=ExtResource("7_46dtf")]
+
 [node name="FlagSprite" type="Sprite2D" parent="Flag"]
+visible = false
 texture = ExtResource("7_as00u")
 
 [node name="Area2D" type="Area2D" parent="Flag" groups=["flag"]]

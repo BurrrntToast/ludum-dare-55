@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwxggwq86p1b7"]
+[gd_scene load_steps=16 format=3 uid="uid://cwxggwq86p1b7"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_c142v"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_nbjag"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="5_d0fh6"]
 [ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="6_flych"]
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="6_t3g40"]
+[ext_resource type="PackedScene" uid="uid://cy5i5beoymg2x" path="res://scenes/portal particle/portal_particle.tscn" id="7_4qest"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n408k"]
 texture = ExtResource("6_t3g40")
@@ -66,7 +67,11 @@ script = ExtResource("4_42ax1")
 target_scene = "res://scenes/levels/level_8.tscn"
 plate1_required = true
 
+[node name="PortalParticle" parent="Flag" instance=ExtResource("7_4qest")]
+position = Vector2(0, -16)
+
 [node name="FlagSprite" type="Sprite2D" parent="Flag"]
+visible = false
 position = Vector2(0, -15)
 texture = ExtResource("5_d0fh6")
 

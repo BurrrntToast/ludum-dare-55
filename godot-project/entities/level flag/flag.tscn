@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="1_67hj0"]
 [ext_resource type="Script" path="res://entities/level flag/flag.gd" id="1_viiou"]
+[ext_resource type="PackedScene" uid="uid://cy5i5beoymg2x" path="res://scenes/portal particle/portal_particle.tscn" id="2_s6o8y"]
 [ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="3_qjcxb"]
-
-[sub_resource type="Gradient" id="Gradient_tjsid"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 0.156863, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhlni"]
 size = Vector2(10, 16)
@@ -22,20 +20,7 @@ size = Vector2(8, 3)
 [node name="Flag" type="Node2D"]
 script = ExtResource("1_viiou")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 1
-emission_sphere_radius = 4.0
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
-angular_velocity_min = 150.0
-angular_velocity_max = 200.0
-scale_amount_min = 2.0
-scale_amount_max = 5.0
-color_ramp = SubResource("Gradient_tjsid")
+[node name="PortalParticle" parent="." instance=ExtResource("2_s6o8y")]
 
 [node name="FlagSprite" type="Sprite2D" parent="."]
 visible = false
