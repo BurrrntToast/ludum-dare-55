@@ -17,7 +17,7 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (time_to_peak_time * time_to_peak_time)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (time_to_descent_time * time_to_descent_time)) * -1.0
 
-@onready var all_colours : Array = ["#ff004d", "#00e436", "#ffec27", "#29adff"]
+@onready var all_colours : Array = ["#ff004d", "#00e436", "#ffec27", "#29adff", "#ffa300"]
 @onready var current_colour : String = "" 
 
 var is_active : bool = false

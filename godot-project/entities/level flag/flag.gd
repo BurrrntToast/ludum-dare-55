@@ -8,6 +8,7 @@ extends Node2D
 @export var plate3_required : bool = false
 
 @onready var flag_sprite = $FlagSprite
+@onready var portal_particle = $PortalParticle
 
 @onready var plate1 = $Plate1
 @onready var plate2 = $Plate2
@@ -44,9 +45,11 @@ func should_flag_be_active():
 	if plate1_active and plate2_active and plate3_active:
 		flag_active = true
 		flag_sprite.self_modulate = "ffec27"
+		portal_particle.color = "ffffff"
 	else:
 		flag_active = false
 		flag_sprite.self_modulate = "3b3b3b"
+		portal_particle.color = "000000"
 	
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("guy") and flag_active:
