@@ -77,6 +77,7 @@ _data = {
 }
 
 [node name="TransitionManager" type="Node2D"]
+visible = false
 z_index = 1
 script = ExtResource("1_sgu28")
 
