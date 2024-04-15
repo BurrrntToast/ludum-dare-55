@@ -16,8 +16,8 @@ func populate_background():
 	for i in rand_rectangles:
 		
 		var rand_scale = randf_range(2.0,4.0)
-		var rand_x_pos = randf_range(10.0, 150.0)
-		var rand_y_pos = randf_range(10.0, 150.0)
+		var rand_x_pos = randf_range(0.0, 160.0)
+		var rand_y_pos = randf_range(0.0, 160.0)
 		var rand_rotations = randi_range(0.0, 360.0)
 		
 		var rect_instance = RECTANGLE.instantiate()
@@ -29,8 +29,8 @@ func populate_background():
 	for i in rand_sqares:
 		
 		var rand_scale = randf_range(2.0,4.0)
-		var rand_x_pos = randf_range(10.0, 150.0)
-		var rand_y_pos = randf_range(10.0, 150.0)
+		var rand_x_pos = randf_range(0.0, 160.0)
+		var rand_y_pos = randf_range(0.0, 160.0)
 		var rand_rotations = randi_range(0.0, 360.0)
 		
 		var square_instance = SQUARE.instantiate()
