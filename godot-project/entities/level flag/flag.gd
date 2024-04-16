@@ -8,6 +8,7 @@ extends Node2D
 @export var plate3_required : bool = false
 
 @onready var flag_sprite = $FlagSprite
+@onready var portal_particle = $PortalParticle
 
 @onready var plate1 = $Plate1
 @onready var plate2 = $Plate2
@@ -44,33 +45,45 @@ func should_flag_be_active():
 	if plate1_active and plate2_active and plate3_active:
 		flag_active = true
 		flag_sprite.self_modulate = "ffec27"
+		portal_particle.color = "ffffff"
 	else:
 		flag_active = false
 		flag_sprite.self_modulate = "3b3b3b"
+		portal_particle.color = "000000"
 	
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("guy") and flag_active:
 		TransitionManager.transition_to_scene(target_scene)
+		SoundManager.play_portal_sound()
 
-func _on_plate_1_area_entered(_area):
+func _on_plate_1_area_entered(area):
 	plate1_active = true
 	should_flag_be_active()
+	
+	if area.is_in_group("static"):
+		plate3_collision.set_deferred("disabled", true)
 
 func _on_plate_1_area_exited(_area):
 	plate1_active = false
 	should_flag_be_active()
 
-func _on_plate_2_area_entered(_area):
+func _on_plate_2_area_entered(area):
 	plate2_active = true
 	should_flag_be_active()
+
+	if area.is_in_group("static"):
+		plate2_collision.set_deferred("disabled", true)
 
 func _on_plate_2_area_exited(_area):
 	plate2_active = false
 	should_flag_be_active()
 
-func _on_plate_3_area_entered(_area):
+func _on_plate_3_area_entered(area):
 	plate3_active = true
 	should_flag_be_active()
+	
+	if area.is_in_group("static"):
+		plate3_collision.set_deferred("disabled", true)
 
 func _on_plate_3_area_exited(_area):
 	plate3_active = false

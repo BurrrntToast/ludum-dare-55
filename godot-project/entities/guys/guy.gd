@@ -17,7 +17,7 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (time_to_peak_time * time_to_peak_time)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (time_to_descent_time * time_to_descent_time)) * -1.0
 
-@onready var all_colours : Array = ["#ff004d", "#00e436", "#ffec27", "#29adff"]
+@onready var all_colours : Array = ["#ff004d", "#00e436", "#ffec27", "#29adff", "#ffa300"]
 @onready var current_colour : String = "" 
 
 var is_active : bool = false
@@ -36,7 +36,11 @@ func _process(_delta):
 	if is_on_floor() and !on_ground:
 		sqeeze()
 		on_ground = true
-
+		
+	if position.y > 170 or position.x > 170 or position.x < -10:
+		respawn()
+		SoundManager.play_death_sound()
+		
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
 
@@ -92,6 +96,9 @@ func sqeeze():
 	var sqeeze_tween = create_tween()
 	sqeeze_tween.tween_property(self, "scale", Vector2(1.2, .8), 0.1).set_trans(Tween.TRANS_CUBIC)
 	sqeeze_tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+
+func respawn():
+	get_tree().reload_current_scene()
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("no_summon_zone"):

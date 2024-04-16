@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b10bbhpnjoish"]
+[gd_scene load_steps=8 format=3 uid="uid://b10bbhpnjoish"]
 
 [ext_resource type="Script" path="res://scenes/sound manager/sound_manager.gd" id="1_0uuo7"]
-[ext_resource type="AudioStream" uid="uid://dn8wjvou15ilr" path="res://resources/sounds/explosion.wav" id="2_lxjgs"]
+[ext_resource type="AudioStream" uid="uid://cn54qnk36eywu" path="res://resources/sounds/summon.wav" id="2_vibu2"]
 [ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="3_bca0u"]
 [ext_resource type="AudioStream" uid="uid://d24hmrqsy2ukv" path="res://resources/sounds/walk.mp3" id="3_v7cdt"]
+[ext_resource type="AudioStream" uid="uid://bilqkcyd2oc3f" path="res://resources/sounds/music.mp3" id="5_2uxcf"]
+[ext_resource type="AudioStream" uid="uid://b6bp4neoa1red" path="res://resources/sounds/death.wav" id="6_f8l5a"]
+[ext_resource type="AudioStream" uid="uid://ct3i88slls5s7" path="res://resources/sounds/fireportal.wav" id="7_61pio"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_0uuo7")
@@ -11,16 +14,32 @@ script = ExtResource("1_0uuo7")
 [node name="PlayerSounds" type="Node2D" parent="."]
 
 [node name="SummonSound" type="AudioStreamPlayer" parent="PlayerSounds"]
-stream = ExtResource("2_lxjgs")
-volume_db = -18.0
+stream = ExtResource("2_vibu2")
+volume_db = -15.0
+pitch_scale = 1.1
 bus = &"SFX"
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="PlayerSounds"]
 stream = ExtResource("3_v7cdt")
-volume_db = -10.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="PlayerSounds"]
 stream = ExtResource("3_bca0u")
 volume_db = -18.0
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="PlayerSounds"]
+stream = ExtResource("5_2uxcf")
+volume_db = -18.0
+autoplay = true
+bus = &"Music"
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="PlayerSounds"]
+stream = ExtResource("6_f8l5a")
+volume_db = -10.0
+
+[node name="PortalSound" type="AudioStreamPlayer" parent="PlayerSounds"]
+stream = ExtResource("7_61pio")
+volume_db = -15.0
+pitch_scale = 0.82

@@ -8,6 +8,7 @@ const guy3_spritesheet = preload("res://resources/textures/guy 3/guy3_spriteshee
 @onready var guy_collision_size_array = [Vector2(8, 8), Vector2(8, 10), Vector2(8, 13)]
 @onready var guy_collision_position_array = [Vector2(0, 4), Vector2(0, 3), Vector2(0, 1.5)]
 @onready var sprite = $Sprite
+@onready var shadow = $Shadow
 @onready var sprite_mask = $SpriteMask
 @onready var collision_shape = $CollisionShape2D
 @onready var area_collision_shape = $Area2D/CollisionShape2D2
@@ -31,6 +32,7 @@ func set_collision_shape(guy_num):
 func set_sprite(guy_num):
 	sprite.texture = guy_sprite_array[guy_num]
 	sprite_mask.texture = guy_sprite_array[guy_num]
+	shadow.texture = guy_sprite_array[guy_num]
 
 func set_colour(col):
 	sprite.self_modulate = col
