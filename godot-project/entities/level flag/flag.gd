@@ -23,6 +23,11 @@ var plate3_active : bool = false
 
 var flag_active : bool = false
 
+func _process(delta):
+	
+	print("p1 " + str(plate1_active))
+	print("p2 " + str(plate2_active))
+
 func _ready():
 	if !plate1_required:
 		plate1_active = true
@@ -61,12 +66,17 @@ func _on_plate_1_area_entered(area):
 	should_flag_be_active()
 	
 	if area.is_in_group("static"):
-		plate3_collision.set_deferred("disabled", true)
+		plate1_collision.set_deferred("disabled", true)
+	
 
 func _on_plate_1_area_exited(_area):
 	plate1_active = false
-	should_flag_be_active()
+	
+	if plate1_collision.disabled:
+		plate1_active = true
 
+	should_flag_be_active()
+	
 func _on_plate_2_area_entered(area):
 	plate2_active = true
 	should_flag_be_active()
@@ -76,6 +86,10 @@ func _on_plate_2_area_entered(area):
 
 func _on_plate_2_area_exited(_area):
 	plate2_active = false
+	
+	if plate2_collision.disabled:
+		plate2_active = true
+	
 	should_flag_be_active()
 
 func _on_plate_3_area_entered(area):
@@ -87,4 +101,10 @@ func _on_plate_3_area_entered(area):
 
 func _on_plate_3_area_exited(_area):
 	plate3_active = false
+	
+	if plate3_collision.disabled:
+		plate3_active = true
+	
 	should_flag_be_active()
+
+

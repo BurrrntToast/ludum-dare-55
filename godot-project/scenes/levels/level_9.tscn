@@ -83,7 +83,6 @@ position = Vector2(50, 28)
 texture = ExtResource("6_2efqy")
 
 [node name="Plate1Collision" type="CollisionShape2D" parent="Flag/Plate1"]
-visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_djxba")
 
