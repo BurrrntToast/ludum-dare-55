@@ -23,11 +23,6 @@ var plate3_active : bool = false
 
 var flag_active : bool = false
 
-func _process(delta):
-	
-	print("p1 " + str(plate1_active))
-	print("p2 " + str(plate2_active))
-
 func _ready():
 	if !plate1_required:
 		plate1_active = true
