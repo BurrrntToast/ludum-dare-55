@@ -22,6 +22,7 @@ var plate2_active : bool = false
 var plate3_active : bool = false
 
 var flag_active : bool = false
+var used : bool = false
 
 func _ready():
 	if !plate1_required:
@@ -52,7 +53,8 @@ func should_flag_be_active():
 		portal_particle.color = "000000"
 	
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("guy") and flag_active:
+	if area.is_in_group("guy") and flag_active and !used:
+		used = true
 		TransitionManager.transition_to_scene(target_scene)
 		SoundManager.play_portal_sound()
 
