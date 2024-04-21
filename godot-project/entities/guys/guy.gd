@@ -4,6 +4,7 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 
 @onready var jump_sound = $JumpSound
 @onready var sprite = $Sprite
+@onready var shadow = $Shadow
 @onready var sprite_anim = $SpriteAnim
 
 @export var guy_id : float = 0
@@ -88,14 +89,22 @@ func play_walk_sound():
 		SoundManager.play_walk_sound()
 
 func stretch():
-	var stretch_tween = create_tween()
-	stretch_tween.tween_property(self, "scale", Vector2(0.8, 1.2), 0.1).set_trans(Tween.TRANS_CUBIC)
-	stretch_tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+	var sprite_stretch_tween = create_tween()
+	sprite_stretch_tween.tween_property(sprite, "scale", Vector2(0.8, 1.2), 0.1).set_trans(Tween.TRANS_CUBIC)
+	sprite_stretch_tween.tween_property(sprite, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+
+	var shadow_stretch_tween = create_tween()
+	shadow_stretch_tween.tween_property(shadow, "scale", Vector2(0.8, 1.2), 0.1).set_trans(Tween.TRANS_CUBIC)
+	shadow_stretch_tween.tween_property(shadow, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
 
 func sqeeze():
-	var sqeeze_tween = create_tween()
-	sqeeze_tween.tween_property(self, "scale", Vector2(1.2, .8), 0.1).set_trans(Tween.TRANS_CUBIC)
-	sqeeze_tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+	var sprite_sqeeze_tween = create_tween()
+	sprite_sqeeze_tween.tween_property(sprite, "scale", Vector2(1.2, .8), 0.1).set_trans(Tween.TRANS_CUBIC)
+	sprite_sqeeze_tween.tween_property(sprite, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
+	
+	var shadow_sqeeze_tween = create_tween()
+	shadow_sqeeze_tween.tween_property(shadow, "scale", Vector2(1.2, .8), 0.1).set_trans(Tween.TRANS_CUBIC)
+	shadow_sqeeze_tween.tween_property(shadow, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
 
 func respawn():
 	get_tree().reload_current_scene()
