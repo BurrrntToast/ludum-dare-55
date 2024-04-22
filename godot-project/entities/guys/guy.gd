@@ -24,6 +24,7 @@ const STATIC_GUY = preload("res://entities/static guy/static_guy.tscn")
 var is_active : bool = false
 var on_ground : bool = true
 var can_summon : bool = true
+var can_die : bool = true
 
 func _ready():
 	pick_random_colour()
@@ -39,8 +40,9 @@ func _process(_delta):
 		on_ground = true
 		
 	if position.y > 170 or position.x > 170 or position.x < -10:
-		respawn()
-		SoundManager.play_death_sound()
+		if can_die:
+			respawn()
+			SoundManager.play_death_sound()
 		
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta # apply gravity
@@ -112,6 +114,9 @@ func respawn():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("no_summon_zone"):
 		can_summon = false
+		
+	if area.is_in_group("flag"):
+		can_die = false
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("no_summon_zone"):
