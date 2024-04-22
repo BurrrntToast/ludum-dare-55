@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/static guy/static_guy.gd" id="1_elq7g"]
 [ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="2_cya0w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mkl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj2lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as08v"]
 size = Vector2(0, 0)
@@ -195,7 +195,7 @@ hframes = 6
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_c1mkl")
+shape = SubResource("RectangleShape2D_oj2lx")
 
 [node name="Area2D" type="Area2D" parent="." groups=["static"]]
 

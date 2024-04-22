@@ -15,11 +15,17 @@ const guy3_spritesheet = preload("res://resources/textures/guy 3/guy3_spriteshee
 @onready var sprite_anim = $SpriteAnim
 
 func setup(guy_num, col):
+	create_collision_shape()
 	set_collision_size(guy_num)
 	set_collision_shape(guy_num)
 	set_sprite(guy_num)
 	set_colour(col)
 	$SpriteAnim.play("summon")
+
+func create_collision_shape():
+	var new_shape = RectangleShape2D.new()
+	collision_shape.set_shape(new_shape)
+	area_collision_shape.set_shape(new_shape)
 
 func set_collision_size(guy_num):
 	collision_shape.shape.size = guy_collision_size_array[guy_num]
