@@ -1,7 +1,4 @@
-# bergs
-
-a game made for the [ludum dare 55 game jam](https://ldjam.com/events/ludum-dare/55/)   
-# bergs
+  # bergs
 
 a game made for the [ludum dare 55 game jam](https://ldjam.com/events/ludum-dare/55/)   
 the source code for the jam version is on the [jam version](https://github.com/BurrrntToast/ludum-dare-55/tree/jam-version) branch
