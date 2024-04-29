@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5m6awn56id5i"]
+
+[ext_resource type="Texture2D" uid="uid://bjxycgorb7wyw" path="res://resources/textures/spike.png" id="1_0wanr"]
+
+[node name="Spike" type="Area2D" groups=["spike", "spikes"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_0wanr")
