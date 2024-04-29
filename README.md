@@ -1,6 +1,7 @@
 # bergs
 
-a game made for the [ludum dare 55 game jam](https://ldjam.com/events/ludum-dare/55/)  
+a game made for the [ludum dare 55 game jam](https://ldjam.com/events/ludum-dare/55/)   
+the source code for the jam version is on the [jam version](https://github.com/BurrrntToast/ludum-dare-55/tree/jam-version) branch
 
 ### 🎮 game links
 `bergs` | [Itch.io](https://burnttoastdev.itch.io/bergs) | [GitHub](https://github.com/BurrrntToast/ludum-dare-55) | [LD Page](https://ldjam.com/events/ludum-dare/55/bergs)
