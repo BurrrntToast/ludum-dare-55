@@ -10,8 +10,8 @@ func _process(delta):
 func reset_timer():
 	time = 0
 
-func pause_timer():
-	active = false
-
-func resume_timer():
+func start_timer():
 	active = true
+
+func stop_timer():
+	active = false

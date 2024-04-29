@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://4y2avfdfyq7q"]
+[gd_scene load_steps=10 format=3 uid="uid://4y2avfdfyq7q"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_5bxu4"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_auddj"]
+[ext_resource type="PackedScene" uid="uid://cb3kbsvfbv2np" path="res://scripts/time tracking/start_time_tracking.tscn" id="2_eo72t"]
 [ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="3_3ptf8"]
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="4_acyl5"]
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="5_f7cbe"]
@@ -35,6 +36,8 @@ sources/0 = SubResource("TileSetAtlasSource_n408k")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_5bxu4")
+
+[node name="StartTimeTracking" parent="." instance=ExtResource("2_eo72t")]
 
 [node name="Background" parent="." instance=ExtResource("2_auddj")]
 
