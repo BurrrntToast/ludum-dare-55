@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfojdvcd07qm6"]
+[gd_scene load_steps=11 format=3 uid="uid://bfojdvcd07qm6"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_js0b5"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_2y1jp"]
+[ext_resource type="PackedScene" uid="uid://cxawtp27h5ltp" path="res://scripts/time tracking/stop_time_tracking.tscn" id="2_ge2ij"]
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="3_2k5a6"]
 [ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="4_jom75"]
 [ext_resource type="PackedScene" uid="uid://cyd5t8xs3rsh6" path="res://entities/level flag/flag.tscn" id="5_8mdjd"]
@@ -41,6 +42,8 @@ sources/0 = SubResource("TileSetAtlasSource_n408k")
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_js0b5")
+
+[node name="StopTimeTracking" parent="." instance=ExtResource("2_ge2ij")]
 
 [node name="Background" parent="." instance=ExtResource("2_2y1jp")]
 

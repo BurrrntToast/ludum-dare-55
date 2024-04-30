@@ -121,3 +121,6 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("no_summon_zone"):
 		can_summon = true
+		
+	if area.is_in_group("spike"):
+		respawn()

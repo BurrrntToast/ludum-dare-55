@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ct3i88slls5s7"
-path="res://.godot/imported/fireportal.wav-113bc700c1e2c71334bfa9c66f6f1b6b.sample"
+path="res://.godot/imported/fireportal.wav-6d9e629c457d10705a513e7d8444071b.sample"
 
 [deps]
 
-source_file="res://resources/Sounds/fireportal.wav"
-dest_files=["res://.godot/imported/fireportal.wav-113bc700c1e2c71334bfa9c66f6f1b6b.sample"]
+source_file="res://resources/sounds/fireportal.wav"
+dest_files=["res://.godot/imported/fireportal.wav-6d9e629c457d10705a513e7d8444071b.sample"]
 
 [params]
 
