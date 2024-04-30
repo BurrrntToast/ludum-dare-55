@@ -6,3 +6,4 @@ extends Node
 
 func _ready():
 	TimerScript.stop_timer()
+	print(TimerScript.time_text)
