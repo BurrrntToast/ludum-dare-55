@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7heybi0egxw5"]
+
+[ext_resource type="Script" path="res://menus/credit menu/credits_menu.gd" id="1_afjr4"]
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="1_vgap4"]
+[ext_resource type="Theme" uid="uid://0eh8p774opje" path="res://resources/themes/credit_menu.tres" id="2_jccmm"]
+
+[node name="CreditsMenu" type="Node2D"]
+script = ExtResource("1_afjr4")
+
+[node name="Background" parent="." instance=ExtResource("1_vgap4")]
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 160.0
+theme = ExtResource("2_jccmm")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 161.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+
+[node name="DevelopTitle" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Developed By"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DevCredits" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Credit1" type="Label" parent="Control/CenterContainer/VBoxContainer/DevCredits"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "burnttoastdev"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="Control/CenterContainer/VBoxContainer/DevCredits"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "CaineTinyArms"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blank" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicTitle" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music By"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Iiro" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Iiro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blank2" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -6,7 +6,6 @@ extends Node2D
 @onready var death_sound = $PlayerSounds/DeathSound
 @onready var portal_sound = $PlayerSounds/PortalSound
 
-
 func play_summon_sound():
 	var rand_pitch = randf_range(0.8, 1.2)
 	summon_sound.pitch_scale = rand_pitch
