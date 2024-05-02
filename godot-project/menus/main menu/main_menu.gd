@@ -1,8 +1,8 @@
 extends Node2D
 
-var first_scene : String = "res://scenes/levels/level_1.tscn"
-var option_menu : String
-var credits_menu : String = "res://menus/credit menu/credits_menu.tscn"
+const first_scene : String = "res://scenes/levels/level_1.tscn"
+const option_menu : String = "res://menus/options menu/options_menu.tscn"
+const credits_menu : String = "res://menus/credit menu/credits_menu.tscn"
 
 @onready var play_button = $Control/CenterContainer/OptionsContainer/PlayButton
 @onready var options_button = $Control/CenterContainer/OptionsContainer/OptionsButton
@@ -18,6 +18,7 @@ var credits_menu : String = "res://menus/credit menu/credits_menu.tscn"
 
 func _ready():
 	TransitionManager.transition_in()
+	play_button.grab_focus()
 
 # play button
 func _on_play_button_pressed():
