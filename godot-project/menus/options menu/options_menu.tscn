@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf5dmym5ci6u5"]
+
+[ext_resource type="Script" path="res://menus/options menu/options_menu.gd" id="1_5nu23"]
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_wmn5p"]
+[ext_resource type="Theme" uid="uid://dv17x1o04hg58" path="res://resources/themes/option_menu.tres" id="3_ujgmy"]
+
+[node name="OptionsMenu" type="Node2D"]
+script = ExtResource("1_5nu23")
+
+[node name="Background" parent="." instance=ExtResource("2_wmn5p")]
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 160.0
+theme = ExtResource("3_ujgmy")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+
+[node name="Music" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Control/CenterContainer/VBoxContainer/Music"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="Slider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/Music"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+
+[node name="SFX" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Control/CenterContainer/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="Slider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
