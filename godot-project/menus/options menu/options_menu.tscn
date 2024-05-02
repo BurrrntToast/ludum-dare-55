@@ -37,21 +37,27 @@ custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 text = "Music"
 
-[node name="Slider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/Music"]
+[node name="MusicSlider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/Music"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
-[node name="SFX" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer"]
+[node name="Sfx" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="Control/CenterContainer/VBoxContainer/SFX"]
+[node name="Text" type="Label" parent="Control/CenterContainer/VBoxContainer/Sfx"]
 custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 text = "SFX"
 
-[node name="Slider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/SFX"]
+[node name="SfxSlider" type="HSlider" parent="Control/CenterContainer/VBoxContainer/Sfx"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="BackButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(80, 0)
@@ -59,4 +65,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
+[connection signal="value_changed" from="Control/CenterContainer/VBoxContainer/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/CenterContainer/VBoxContainer/Sfx/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
