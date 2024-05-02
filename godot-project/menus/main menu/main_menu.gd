@@ -2,7 +2,7 @@ extends Node2D
 
 var first_scene : String = "res://scenes/levels/level_1.tscn"
 var option_menu : String
-var credits_menu : String
+var credits_menu : String = "res://menus/credit menu/credits_menu.tscn"
 
 @onready var play_button = $Control/CenterContainer/OptionsContainer/PlayButton
 @onready var options_button = $Control/CenterContainer/OptionsContainer/OptionsButton

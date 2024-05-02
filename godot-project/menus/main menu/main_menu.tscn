@@ -38,7 +38,6 @@ text = "Options"
 
 [node name="CreditsButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
 layout_mode = 2
-disabled = true
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
