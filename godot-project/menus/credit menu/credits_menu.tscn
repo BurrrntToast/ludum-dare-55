@@ -75,6 +75,7 @@ vertical_alignment = 1
 [node name="BackButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Back"
 
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
