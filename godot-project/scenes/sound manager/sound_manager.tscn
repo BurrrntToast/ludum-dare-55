@@ -38,8 +38,10 @@ bus = &"Music"
 [node name="DeathSound" type="AudioStreamPlayer" parent="PlayerSounds"]
 stream = ExtResource("6_f8l5a")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="PortalSound" type="AudioStreamPlayer" parent="PlayerSounds"]
 stream = ExtResource("7_61pio")
 volume_db = -15.0
 pitch_scale = 0.82
+bus = &"SFX"
