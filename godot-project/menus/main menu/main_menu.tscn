@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bct4uq6myoa8b"]
+
+[ext_resource type="Script" path="res://menus/main menu/main_menu.gd" id="1_8m3gt"]
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_3dn5i"]
+[ext_resource type="Theme" uid="uid://b8ol8myx4ow56" path="res://resources/themes/main_menu.tres" id="3_dgrvb"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_8m3gt")
+
+[node name="Background" parent="." instance=ExtResource("2_3dn5i")]
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 160.0
+theme = ExtResource("3_dgrvb")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
+layout_mode = 2
+disabled = true
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
+layout_mode = 2
+disabled = true
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Control/CenterContainer/OptionsContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/OptionsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/OptionsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/OptionsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

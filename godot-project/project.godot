@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bergs"
-run/main_scene="res://scenes/levels/level_1.tscn"
+run/main_scene="res://menus/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://resources/textures/icon.svg"
 
@@ -35,6 +35,7 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://entities/": "green",
 "res://exports/": "red",
+"res://menus/": "pink",
 "res://resources/": "purple",
 "res://scenes/": "blue",
 "res://scripts/": "yellow"
