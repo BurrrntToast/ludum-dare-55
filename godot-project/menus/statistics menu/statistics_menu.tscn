@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://nvp7qilyaegt"]
+
+[ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="1_2fuki"]
+[ext_resource type="Script" path="res://menus/statistics menu/statistics_menu.gd" id="1_8s76h"]
+
+[node name="StatisticsMenu" type="Node2D"]
+script = ExtResource("1_8s76h")
+
+[node name="Background" parent="." instance=ExtResource("1_2fuki")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Statistics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blank" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaytimeText" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Playtime"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnedText" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bergs Berged"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JumpsText" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jumps"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathsText" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Deaths"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
