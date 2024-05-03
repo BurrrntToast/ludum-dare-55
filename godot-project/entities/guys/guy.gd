@@ -70,6 +70,8 @@ func jump():
 	on_ground = false
 	jump_sound.play()
 	stretch()
+	StatisticsTracking.jumps += 1
+	StatisticsTracking.run_jumps += 1
 	
 func get_gravity():
 	if velocity.y < 0.0: return jump_gravity
@@ -109,6 +111,8 @@ func sqeeze():
 	shadow_sqeeze_tween.tween_property(shadow, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_CUBIC)
 
 func respawn():
+	StatisticsTracking.deaths += 1
+	StatisticsTracking.run_deaths += 1
 	get_tree().reload_current_scene()
 
 func _on_area_2d_area_entered(area):

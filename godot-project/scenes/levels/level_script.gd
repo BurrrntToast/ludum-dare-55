@@ -30,6 +30,8 @@ func _process(_delta):
 			make_static_guy()
 			summon_random_guy()
 			SoundManager.play_summon_sound()
+			StatisticsTracking.bergs_spawned += 1
+			StatisticsTracking.run_bergs_spawned += 1
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()

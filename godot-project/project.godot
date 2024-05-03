@@ -21,6 +21,7 @@ GlobalScript="*res://scripts/global script/global_script.tscn"
 SoundManager="*res://scenes/sound manager/sound_manager.tscn"
 TransitionManager="*res://scenes/transition manager/transition_manager.tscn"
 TimerScript="*res://scripts/time tracking/time_tracking_script.tscn"
+StatisticsTracking="*res://scripts/statistics tracking/statistics_tracking.tscn"
 
 [display]
 
