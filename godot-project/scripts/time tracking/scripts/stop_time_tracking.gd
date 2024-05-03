@@ -6,4 +6,4 @@ extends Node
 
 func _ready():
 	TimerScript.stop_timer()
-	print(TimerScript.time_text)
+	StatisticsTracking.run_playtime = TimerScript.time

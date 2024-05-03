@@ -1,6 +1,7 @@
 extends Node
 
 var time : float = 0.0
+var total_playtime : float = 0.0
 var active : bool = false
 
 var mils : float = 0.0
@@ -11,6 +12,9 @@ var hrs : float = 0.0
 var time_text : String = "%02d:%02d:%02d:%02d" % [hrs,mins,secs,mils]
 
 func _process(delta):
+	
+	total_playtime += delta
+	
 	if active:
 		time += delta
 	
