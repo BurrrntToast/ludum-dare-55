@@ -3,7 +3,7 @@ extends Node2D
 const first_scene : String = "res://scenes/levels/level_1.tscn"
 const option_menu : String = "res://menus/options menu/options_menu.tscn"
 const credits_menu : String = "res://menus/credit menu/credits_menu.tscn"
-const statistics_menu = "res://menus/statistics menu/statistics_menu.tscn"
+const statistics_menu : String = "res://menus/statistics menu/statistics_menu.tscn"
 
 @onready var play_button = $Control/CenterContainer/OptionsContainer/PlayButton
 @onready var options_button = $Control/CenterContainer/OptionsContainer/OptionsButton
@@ -12,8 +12,6 @@ const statistics_menu = "res://menus/statistics menu/statistics_menu.tscn"
 
 # TODO 
 # add sound
-# add options screen
-# add credits screen
 # add title text
 # add some bergs about
 

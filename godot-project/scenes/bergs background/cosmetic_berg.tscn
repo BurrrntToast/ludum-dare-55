@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuomsbvfypqtp"]
+
+[ext_resource type="Script" path="res://scenes/bergs background/cosmetic_berg.gd" id="1_3tutg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3c36"]
+size = Vector2(2, 2)
+
+[node name="CosmeticBerg" type="Sprite2D"]
+hframes = 6
+script = ExtResource("1_3tutg")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1, 1)
+hframes = 6
+
+[node name="Area2D" type="Area2D" parent="." groups=["berg"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_b3c36")
