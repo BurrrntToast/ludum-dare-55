@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nvp7qilyaegt"]
+[gd_scene load_steps=4 format=3 uid="uid://nvp7qilyaegt"]
 
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="1_2fuki"]
 [ext_resource type="Script" path="res://menus/statistics menu/statistics_menu.gd" id="1_8s76h"]
+[ext_resource type="Theme" uid="uid://cssgylux71swc" path="res://resources/themes/stats_menu.tres" id="3_x1hl5"]
 
 [node name="StatisticsMenu" type="Node2D"]
 script = ExtResource("1_8s76h")
@@ -13,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 160.0
 offset_bottom = 160.0
+theme = ExtResource("3_x1hl5")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
@@ -28,11 +30,6 @@ layout_mode = 2
 [node name="Title" type="Label" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Statistics"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Blank" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 

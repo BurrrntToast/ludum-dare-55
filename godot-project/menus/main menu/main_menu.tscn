@@ -39,6 +39,10 @@ text = "Options"
 layout_mode = 2
 text = "Credits"
 
+[node name="StatisticsButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
+layout_mode = 2
+text = "Statistics"
+
 [node name="QuitButton" type="Button" parent="Control/CenterContainer/OptionsContainer"]
 layout_mode = 2
 text = "Quit"
@@ -46,4 +50,5 @@ text = "Quit"
 [connection signal="pressed" from="Control/CenterContainer/OptionsContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/OptionsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/OptionsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/OptionsContainer/StatisticsButton" to="." method="_on_statistics_button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/OptionsContainer/QuitButton" to="." method="_on_quit_button_pressed"]
