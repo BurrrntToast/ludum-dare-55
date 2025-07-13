@@ -45,7 +45,7 @@ func _process(_delta):
 			SoundManager.play_death_sound()
 		
 func _physics_process(delta):
-	velocity.y += get_gravity() * delta # apply gravity
+	velocity.y += _get_gravity() * delta # apply gravity
 
 	if is_active:
 		handle_movement_input()
@@ -71,7 +71,7 @@ func jump():
 	jump_sound.play()
 	stretch()
 	
-func get_gravity():
+func _get_gravity():
 	if velocity.y < 0.0: return jump_gravity
 	else: return fall_gravity
 	
