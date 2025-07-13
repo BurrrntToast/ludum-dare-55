@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://qa10f2px0y0w"]
 
-[ext_resource type="Script" path="res://entities/no summon zone/no_summon_zone.gd" id="1_e0jfs"]
+[ext_resource type="Script" uid="uid://cvw2qao0jn645" path="res://entities/no summon zone/no_summon_zone.gd" id="1_e0jfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxu0p"]
 size = Vector2(0, 0)

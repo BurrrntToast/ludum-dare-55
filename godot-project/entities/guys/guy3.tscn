@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://v88dd2oug4vi"]
 
-[ext_resource type="Script" path="res://entities/guys/guy.gd" id="1_6p7wf"]
+[ext_resource type="Script" uid="uid://brfbmygtuiyak" path="res://entities/guys/guy.gd" id="1_6p7wf"]
 [ext_resource type="Texture2D" uid="uid://6u1rqefmb3s5" path="res://resources/textures/guy 3/guy3_spritesheet.png" id="2_cxf0s"]
 [ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="3_h2cg7"]
 
@@ -141,10 +141,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xgwa6"]
 _data = {
-"RESET": SubResource("Animation_2vrq1"),
-"idle": SubResource("Animation_5mmi0"),
-"summon": SubResource("Animation_cky5t"),
-"walk": SubResource("Animation_cqub5")
+&"RESET": SubResource("Animation_2vrq1"),
+&"idle": SubResource("Animation_5mmi0"),
+&"summon": SubResource("Animation_cky5t"),
+&"walk": SubResource("Animation_cqub5")
 }
 
 [node name="Guy3" type="CharacterBody2D"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://c2ssks2vjap0j"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_script.gd" id="1_2xmos"]
+[ext_resource type="Script" uid="uid://b3a37f8idw21a" path="res://scenes/levels/level_script.gd" id="1_2xmos"]
 [ext_resource type="PackedScene" uid="uid://bv4b4w17u8whi" path="res://scenes/background/background.tscn" id="2_bgt4g"]
 [ext_resource type="PackedScene" uid="uid://me711l4t2x77" path="res://scenes/level UI/level_ui.tscn" id="3_8ydk8"]
 [ext_resource type="Texture2D" uid="uid://cx8sxnorr4vd8" path="res://resources/textures/spawn_arrow.png" id="5_6nhmg"]
 [ext_resource type="Texture2D" uid="uid://lnasehkylpjn" path="res://resources/textures/8x8.png" id="6_7dpse"]
-[ext_resource type="Script" path="res://entities/level flag/flag.gd" id="6_oeb8i"]
+[ext_resource type="Script" uid="uid://dugyhhje67j8g" path="res://entities/level flag/flag.gd" id="6_oeb8i"]
 [ext_resource type="PackedScene" uid="uid://cy5i5beoymg2x" path="res://scenes/portal particle/portal_particle.tscn" id="7_u3cxh"]
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="7_xep4d"]
 [ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="8_wv04t"]
@@ -14,8 +14,6 @@
 texture = ExtResource("6_7dpse")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [sub_resource type="TileSet" id="TileSet_auysc"]

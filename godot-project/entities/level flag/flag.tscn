@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cyd5t8xs3rsh6"]
 
 [ext_resource type="Texture2D" uid="uid://cm74mfjam5tcf" path="res://resources/textures/flag.png" id="1_67hj0"]
-[ext_resource type="Script" path="res://entities/level flag/flag.gd" id="1_viiou"]
+[ext_resource type="Script" uid="uid://dugyhhje67j8g" path="res://entities/level flag/flag.gd" id="1_viiou"]
 [ext_resource type="PackedScene" uid="uid://cy5i5beoymg2x" path="res://scenes/portal particle/portal_particle.tscn" id="2_s6o8y"]
 [ext_resource type="Texture2D" uid="uid://dqegt8np8yatp" path="res://resources/textures/plate-up.png" id="3_qjcxb"]
 

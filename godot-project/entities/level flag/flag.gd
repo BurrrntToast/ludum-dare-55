@@ -103,5 +103,3 @@ func _on_plate_3_area_exited(_area):
 		plate3_active = true
 	
 	should_flag_be_active()
-
-

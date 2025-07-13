@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://u1ujkdy15rti"]
 
-[ext_resource type="Script" path="res://scenes/transition manager/transition_manager.gd" id="1_sgu28"]
+[ext_resource type="Script" uid="uid://bcj6mhd2mx6pb" path="res://scenes/transition manager/transition_manager.gd" id="1_sgu28"]
 
 [sub_resource type="Animation" id="Animation_d2is6"]
 length = 0.001
@@ -35,8 +35,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rncaf"]
 _data = {
-"RESET": SubResource("Animation_d2is6"),
-"fade_out": SubResource("Animation_l8cf6")
+&"RESET": SubResource("Animation_d2is6"),
+&"fade_out": SubResource("Animation_l8cf6")
 }
 
 [sub_resource type="Animation" id="Animation_8olpg"]
@@ -72,8 +72,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_js1tw"]
 _data = {
-"RESET": SubResource("Animation_8olpg"),
-"fade_in": SubResource("Animation_q7wq0")
+&"RESET": SubResource("Animation_8olpg"),
+&"fade_in": SubResource("Animation_q7wq0")
 }
 
 [node name="TransitionManager" type="Node2D"]

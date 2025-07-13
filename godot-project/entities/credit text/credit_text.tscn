@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://iyu0ijr60avx"]
 
-[ext_resource type="Script" path="res://entities/credit text/credit_text.gd" id="1_5eehd"]
+[ext_resource type="Script" uid="uid://fgabweq176qe" path="res://entities/credit text/credit_text.gd" id="1_5eehd"]
 [ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="1_xbhxp"]
 [ext_resource type="AudioStream" uid="uid://bhb0edo6p26nk" path="res://resources/sounds/jump.wav" id="2_m6a4n"]
 
@@ -141,10 +141,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xgwa6"]
 _data = {
-"RESET": SubResource("Animation_2vrq1"),
-"idle": SubResource("Animation_5mmi0"),
-"summon": SubResource("Animation_cky5t"),
-"walk": SubResource("Animation_cqub5")
+&"RESET": SubResource("Animation_2vrq1"),
+&"idle": SubResource("Animation_5mmi0"),
+&"summon": SubResource("Animation_cky5t"),
+&"walk": SubResource("Animation_cqub5")
 }
 
 [node name="CreditText" type="CharacterBody2D"]

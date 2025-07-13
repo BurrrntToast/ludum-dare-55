@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byxnxsle7p6ht"]
 
-[ext_resource type="Script" path="res://scripts/time tracking/scripts/time_tracking_script.gd" id="1_pxq32"]
+[ext_resource type="Script" uid="uid://i65jclmg14d1" path="res://scripts/time tracking/scripts/time_tracking_script.gd" id="1_pxq32"]
 
 [node name="TimeTracking" type="Node"]
 script = ExtResource("1_pxq32")

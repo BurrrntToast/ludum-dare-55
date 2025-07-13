@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cb2oop5syt6a1"]
 
-[ext_resource type="Script" path="res://entities/static guy/static_guy.gd" id="1_elq7g"]
+[ext_resource type="Script" uid="uid://6dodqtb1tj0c" path="res://entities/static guy/static_guy.gd" id="1_elq7g"]
 [ext_resource type="Texture2D" uid="uid://dclpubmxwad4h" path="res://resources/textures/guy 1/guy1_spritesheet.png" id="2_cya0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oj2lx"]
@@ -169,10 +169,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xgwa6"]
 _data = {
-"RESET": SubResource("Animation_2vrq1"),
-"idle": SubResource("Animation_5mmi0"),
-"summon": SubResource("Animation_cky5t"),
-"walk": SubResource("Animation_cqub5")
+&"RESET": SubResource("Animation_2vrq1"),
+&"idle": SubResource("Animation_5mmi0"),
+&"summon": SubResource("Animation_cky5t"),
+&"walk": SubResource("Animation_cqub5")
 }
 
 [node name="StaticGuy" type="StaticBody2D"]
@@ -206,5 +206,5 @@ shape = SubResource("RectangleShape2D_as08v")
 [node name="SpriteAnim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
 libraries = {
-"": SubResource("AnimationLibrary_xgwa6")
+&"": SubResource("AnimationLibrary_xgwa6")
 }
